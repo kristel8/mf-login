@@ -1,0 +1,138 @@
+<div class="container-fluid p-0">
+    <div class="left">
+        <!--<div class="animated fadeInLeftBig">-->
+        <!--EG:Cambio solicitado por Jair-->
+        <div>
+            <!-- Fondo Hiper <img class="body" [style.height.px]="myInnerHeightImg" [style.width.px]="myInnerWidthImg" src="assets/images/dark-material-bg.jpg"> -->
+            <!-- Fondo BAC-->
+            <img class="body" [style.height.px]="myInnerHeightImg" [ngStyle]="putStyle()" src="assets/images/bac-material-bg.png">
+            <!-- [style.width.px]="myInnerWidthImg" -->
+        </div>
+    </div>
+    <div class="right">
+        <main>
+            <!--<mat-card class="example-card login-form-wrapper animated fadeInRightBig" [style.height.px]="myInnerHeightForm"-->
+            <!--EG:Cambio solicitado por Jair-->
+
+            <mat-card class="example-card login-form-wrapper" [style.height.px]="myInnerHeightForm" [style.width.px]="myInnerWidthForm">
+
+                <!-- <div style="position: absolute; right: 25px; top: 25px;">
+                    <img class="imglogo" src="assets/images/baccon.png" />
+                </div> -->
+
+
+                <form autocomplete="off" *ngIf="!tokenStorage.isLoggin()" name="form" (ngSubmit)="f.form.valid" #f="ngForm" novalidate style="width: 100%; height: 500px;">
+                    <div class="text-center">
+                        <!-- <div> -->
+                        <div style=" margin-bottom: 40px; margin-top: 120px;text-align: center;">
+                            <!-- Descripcion HIPER <mat-label class="title fontclass-chica-combo2">¡Bienvenido a <span style="color: #dc1431;">HiperCenter v3</span>!</mat-label> -->
+                            <mat-label class="title">Bienvenido a <span style="color: #dc1431;">RAPIBAC</span></mat-label><!-- Descripcion RapiBac -->
+
+                            <!--Icono Hiper <img width="200" alt="bac-image" src="assets/images/imgLogin.png" style="display: block; margin: auto; "> -->
+                            <!--Icono BAC <img width="170" height="170" alt="bac-image" src="assets/images/imgLoginBAC.png" style="display: block; margin:auto; padding: 2px;">-->
+                        </div>
+
+                        <div style="display: flex; justify-content: center;">
+                            <div style="width: 58%;">
+                                <p class="init-sesion">Iniciar sesión</p>
+
+                                <mat-form-field id="{{f.submitted && username.invalid ? 'user2':'user1'}}" appearance="outline" class="tamField_v2">
+                                    <mat-icon matPrefix class="colorIcon">person</mat-icon>
+                                    <input matInput type="text" class="fontclass-chica-combo" name="username" [(ngModel)]="form.username" required #username="ngModel" [disabled]="isLoggedProccess" placeholder="Usuario">
+                                    <mat-error *ngIf="f.submitted && username.invalid" >
+                                        <span  class="fontclass-chica-combo">Por favor ingrese un usuario</span>
+                                    </mat-error>
+                                </mat-form-field>
+
+
+                                <mat-form-field id="pwd1"  appearance="outline" class="fontclass-chica tamField_v2">
+                                    <mat-icon matPrefix class="colorIcon">lock</mat-icon>
+                                    <input matInput type="password" class="fontclass-chica-combo" [type]="hide ? 'text':'password'" name="password" [(ngModel)]="form.password" (keyup.enter)="onSubmit()" required #password="ngModel" [disabled]="isLoggedProccess" placeholder="Contraseña">
+                                    <!-- <button mat-icon-button matSuffix (click)="hide = !hide" type="button">
+                                        <mat-icon class="colorIcon">{{hide ? 'visibility_off':'visibility'}}</mat-icon>
+                                    </button> -->
+                                    <!-- <mat-error *ngIf="f.submitted && password.invalid">
+                                        <div >
+                                            <span *ngIf="password.errors.required" class="fontclass-chica-combo">Por favor ingrese su contraseña</span>
+                                        </div>
+                                    </mat-error> -->
+                                </mat-form-field>
+                                <div  *ngIf="!isLoggedProccess" style="text-align: right">
+                                    <p class="password-forgot" ><label style="cursor: pointer;" class="password-forgot" (click)="forgotPwd()">¿Olvido su contraseña?</label></p>
+                                </div>
+                                <div *ngIf="f.submitted && password.invalid" style="text-align: start; margin-left: 10px;">
+                                    <span *ngIf="password.errors?.required" class="fontclass-chica-combo" style="color: #dc1431;">Por favor ingrese su contraseña</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <!-- <mat-form-field appearance="outline" class="tamField">
+                            <mat-label class="fontclass-chica-combo">Ingresa tu usuario</mat-label>
+                            <mat-icon matSuffix class="colorIcon">account_circle</mat-icon>
+                            <input matInput type="text" class="fontclass-chica-combo" name="username" [(ngModel)]="form.username" required #username="ngModel" [disabled]="isLoggedProccess">
+                            <mat-error>
+                                <span *ngIf="f.submitted && username.invalid" class="fontclass-chica-combo">Por favor ingrese un usuario</span>
+                            </mat-error>
+                        </mat-form-field> -->
+
+
+
+                      <!--   <mat-form-field appearance="outline" class="fontclass-chica tamField">
+                            <mat-label class="fontclass-chica-combo">Ingresa tu Contraseña</mat-label>
+
+                            <input matInput type="password" class="fontclass-chica-combo" [type]="hide ? 'text':'password'" name="password" [(ngModel)]="form.password" (keyup.enter)="onSubmit()" required #password="ngModel" [disabled]="isLoggedProccess">
+                            <button mat-icon-button matSuffix (click)="hide = !hide" type="button">
+                                 <mat-icon class="colorIcon">{{hide ? 'visibility_off':'visibility'}}</mat-icon>
+                            </button>
+                            <mat-error>
+                                <div *ngIf="f.submitted && password.invalid">
+                                    <span *ngIf="password.errors.required" class="fontclass-chica-combo">Por favor ingrese su contraseña</span>
+                                </div>
+                            </mat-error>
+                        </mat-form-field> -->
+
+
+
+                        <mat-card-actions style="margin-bottom: 0px;">
+
+                            <!--
+                    Se desactiva "Recordar y Eliminar Olvido contraseña" hasta validar un analisis correspondiente de como emplearlo de la mejor manera
+                <div class="checkbox">
+                  <mat-checkbox class="fontclass-chica-combo" (click)="openSnackBar()">Recordarme</mat-checkbox>
+                  &nbsp;
+                  <a class="forgot-password fontclass-chica-combo" routerLink="/recuperar"> Olvidó su contraseña?</a>
+                </div> -->
+
+                            <div *ngIf="isLoggedProccess">
+                                <img class="loading-main" src="assets/images/loading.gif" alt="Loading-img" />
+                            </div>
+
+                            <div class="divIngresar-v1" *ngIf="!isLoggedProccess">
+                                <div >
+                                    <button id="btnIngresar" mat-raised-button (click)="onSubmit()" (keyup.enter)="onSubmit()" color="accent" mat-button class="fontclass-chica-combo">Ingresar</button>
+                                </div>
+
+                                <!-- <div class="w-50 d-flex align-items-center justify-content-center">
+                                    <p (click)="forgotPwd()" class=" mb-0 password-forgot">¿Olvido su contraseña?</p>
+                                </div> -->
+                            </div>
+
+                            <!-- <div class="divIngresar-v1" *ngIf="!isLoggedProccess">
+                                <p (click)="forgotPwd()" class="password-forgot">¿Olvido su contraseña?</p>
+                            </div> -->
+
+                        </mat-card-actions>
+
+                        <!--<div *ngIf="f.submitted && isLoginFailed" role="alert" class="message-box error fontclass-chica-combo" align="center">-->
+                        <div *ngIf="isLoginFailed" role="alert" class="message-box error fontclass-chica-combo" align="center">
+                            {{ errorMessage }}
+                        </div>
+                    </div>
+                </form>
+            </mat-card>
+        </main>
+
+    </div>
+</div>

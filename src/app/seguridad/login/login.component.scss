@@ -1,0 +1,224 @@
+@import '_colors.scss';
+
+.fontclass-chica-combo {
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 300;
+}
+
+.fontclass-chica-combo2 {
+
+  font-size: 28px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 300;
+}
+
+.forgot-password {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #039be5;
+}
+
+.login-form-wrapper {
+  line-height: 1.4 !important;
+  letter-spacing: -0.1px !important;
+  font-size: 14px;
+  -webkit-font-smoothing: auto;
+  color: rgba(0, 0, 0, 0.87);
+  -webkit-box-direction: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  /*overflow: hidden !important;*/
+  overflow: auto;
+  overflow-anchor: none;
+  touch-action: auto;
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  /*width: 400px;
+    min-width: 400px;
+    max-width: 400px;*/
+  //box-shadow: 0 8px 10px -5px rgba(0, 0, 0, .2), 0 16px 24px 2px rgba(0, 0, 0, .14), 0 6px 30px 5px rgba(0, 0, 0, .12);
+  box-shadow: none;
+  background: #fff;
+  margin: auto !important;
+}
+
+.body {
+  border: none;
+  display: block;
+  position: absolute;
+}
+
+.container {
+  text-align: center;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.checkbox {
+  color: #3f3f3f;
+}
+
+.divIngresar {
+  margin-top: 2rem;
+}
+
+.divIngresar-v1 {
+  margin-top: 1rem;
+}
+
+
+
+.btnIngresar_v2 {
+  background-color: $secondary-color;
+  width: 32%;
+  background-color: #625658;
+
+  font-weight: normal;
+  font-size: 12px;
+}
+
+#btnIngresar:hover {
+  background-color: $secondaryDark-color;
+}
+
+.colorIcon {
+  color: #7474749f;
+}
+
+.message-box.success {
+  background: #4caf50;
+  border-left-color: #2e7d32;
+}
+
+.message-box.error {
+  background: #ef5350;
+  border-left-color: #b71c1c;
+  width: 60%;
+  margin: auto;
+}
+
+.message-box.warning {
+  background: #ffecb3;
+  border-left-color: #ffc107;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.message-box.info {
+  background: #b3e5fc;
+  border-left-color: #03a9f4;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.message-box {
+  padding: 16px;
+  background: #607d8b;
+  border-left: 6px solid #37474f;
+  color: #fff;
+}
+
+.tamField {
+  width: 59%;
+}
+
+.tamField_v2 {
+  width: 100%;
+}
+
+.loading-main {
+  width: 30px;
+  height: 30px;
+}
+
+@media (max-width: 1254px) {
+  .tamField:first-of-type {
+    margin-bottom: 15px;
+  }
+}
+
+.password-forgot {
+  //text-decoration: underline;
+
+  //font-weight:normal;
+  font-size: 12px;
+  color: #42474d;
+  margin-bottom: 0px !important;
+}
+
+label.password-forgot:hover {
+  color: red;
+}
+
+.imglogo {
+  margin-top: 5px;
+  width: 120px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.init-sesion {
+
+  font-weight: bold;
+  font-size: 15px;
+  text-align: start;
+  color: #42474d;
+  margin-bottom: 6px;
+}
+
+:host::ng-deep .mat-form-field-flex > .mat-form-field-infix {
+  padding: 0.4em 0px !important;
+}
+::ng-deep .mat-form-field-label-wrapper {
+  top: -1.5em;
+}
+
+#user1 ::ng-deep .mat-form-field-wrapper {
+  padding-bottom: 0px !important;
+}
+#user1::placeholder {
+  font-weight: normal;
+}
+#user2 ::ng-deep .mat-form-field-wrapper {
+  padding-bottom: 15px !important;
+}
+#user2::placeholder {
+  font-weight: normal;
+}
+
+#pwd1 ::ng-deep .mat-form-field-wrapper {
+  padding-bottom: 0px !important;
+}
+#pwd2 ::ng-deep .mat-form-field-wrapper {
+  padding-bottom: 15px !important;
+}
